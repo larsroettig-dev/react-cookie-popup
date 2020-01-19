@@ -6,17 +6,12 @@
   "license": "MIT",
   "author": "Lars Roettig <l.roettig@techdivision.com>",
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.4.0",
-    "@testing-library/user-event": "^8.0.3",
     "@types/jest": "^24.0.25",
     "@types/js-cookie": "^2.2.2",
     "@types/node": "^13.1.6",
     "@types/react-dom": "^16.9.0",
     "js-cookie": "^2.2.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0",
     "typescript": "~3.7.2"
   },
   "scripts": {
@@ -26,6 +21,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
+    "test:coverall": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
@@ -45,13 +41,16 @@
     ]
   },
   "devDependencies": {
+    "coveralls": "^3.0.9",
     "@babel/core": "^7.8.0",
     "@storybook/addon-actions": "^5.3.1",
-    "@storybook/addon-backgrounds": "^5.3.6",
     "@storybook/addon-info": "^5.3.1",
     "@storybook/addon-links": "^5.3.1",
     "@storybook/addons": "^5.3.1",
     "@storybook/react": "^5.3.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^8.0.3",
     "autoprefixer": "^9.7.3",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
@@ -68,7 +67,6 @@
     "husky": "^4.0.7",
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
-    "npm-run-all": "^4.1.5",
     "postcss-cli": "^7.1.0",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^12.0.1",

@@ -1,8 +1,8 @@
 # React Cookie Popup
 
-[![NPM Version][npm-image]][npm-url]
-[![NPM Downloads][downloads-image]][downloads-url]
-[![Node.js Version][node-version-image]][node-version-url]
+[![npm version](https://badge.fury.io/js/%40larsroettig%2Freact-cookie-popup.svg)](https://badge.fury.io/js/%40larsroettig%2Freact-cookie-popup)
+[![Travis Status](https://travis-ci.org/larsroettig/react-cookie-popup.svg?branch=master)](https://travis-ci.org/larsroettig/react-cookie-popup.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/larsroettig/react-cookie-popup/badge.svg?branch=master)](https://coveralls.io/github/larsroettig/react-cookie-popup?branch=master)
 
 Is a small React TypeScript Module allows to render a cookie popup based on Tailwind CSS.
 
@@ -24,13 +24,11 @@ npm i @larsroettig/react-cookie-popup
 
 ### Include Components
 
-
-*TODO*
-
+_TODO_
 
 ### Contribute
 
-*Installation:*
+_Installation:_
 
 ```
 git clone git@github.com:larsroettig/react-cookie-popup.git
@@ -38,7 +36,7 @@ yarn install
 yarn storybook
 ```
 
-*Execute Tests:*
+_Execute Tests:_
 
 ```
 git clone git@github.com:larsroettig/react-cookie-popup.git
