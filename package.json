@@ -2,7 +2,7 @@
   "name": "@larsroettig/react-cookie-popup",
   "private": false,
   "description": "React TypeScript Cookie popup",
-  "version": "0.1.0-beta.0",
+  "version": "0.1.0-beta.2",
   "license": "MIT",
   "author": "Lars Roettig <l.roettig@techdivision.com>",
   "dependencies": {
