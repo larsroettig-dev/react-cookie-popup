@@ -1,9 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import CookiesPopupComponent from "../popup";
+import CookiesPopup from "../CookiesPopup";
 
-describe("<CookiesPopupComponent />", () => {
+describe("<CookiesPopup />", () => {
   test("should display cookie popup without error", async () => {
-    render(<CookiesPopupComponent />);
+    render(<CookiesPopup />);
   });
 });
