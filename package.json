@@ -6,7 +6,7 @@
   "license": "MIT",
   "author": "Lars Roettig <l.roettig@techdivision.com>",
   "dependencies": {
-    "@types/jest": "^24.0.25",
+    "@types/jest": "^25.1.0",
     "@types/js-cookie": "^2.2.2",
     "@types/node": "^13.1.6",
     "@types/react-dom": "^16.9.0",
@@ -47,7 +47,7 @@
     "@storybook/addon-links": "^5.3.1",
     "@storybook/addons": "^5.3.1",
     "@storybook/react": "^5.3.1",
-    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/jest-dom": "^5.0.2",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^8.0.3",
     "autoprefixer": "^9.7.3",
@@ -67,8 +67,8 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "husky": "^4.0.7",
-    "jest": "^24.9.0",
-    "lint-staged": "^9.5.0",
+    "jest": "^25.1.0",
+    "lint-staged": "^10.0.4",
     "postcss-cli": "^7.1.0",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^12.0.1",
@@ -80,7 +80,7 @@
     "react-test-renderer": "^16.12.0",
     "tailwindcss": "^1.1.4",
     "tailwindcss-alpha": "^0.1.4",
-    "ts-jest": "^24.3.0"
+    "ts-jest": "^25.0.0"
   },
   "husky": {
     "hooks": {
