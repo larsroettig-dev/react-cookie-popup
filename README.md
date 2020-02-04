@@ -24,7 +24,6 @@ npm i @larsroettig/react-cookie-popup
 
 ### Include Components
 
-_TODO_
 
 ### Contribute
 
