@@ -1,15 +1,11 @@
 {
   "name": "@larsroettig/react-cookie-popup",
-  "private": false,
   "description": "React TypeScript Cookie popup",
   "version": "0.1.0-beta.2",
   "license": "MIT",
   "author": "Lars Roettig <l.roettig@techdivision.com>",
   "dependencies": {
-    "@types/jest": "^25.1.0",
     "@types/js-cookie": "^2.2.2",
-    "@types/node": "^13.1.6",
-    "@types/react-dom": "^16.9.0",
     "js-cookie": "^2.2.1",
     "react": "^16.12.0",
     "typescript": "~3.7.2"
@@ -21,9 +17,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "test:coverall": "jest --coverage --coverageReporters=text-lcov | coveralls",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "test:coverall": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,26 +35,18 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.8.0",
-    "@storybook/addon-actions": "^5.3.1",
-    "@storybook/addon-info": "^5.3.1",
-    "@storybook/addon-links": "^5.3.1",
-    "@storybook/addons": "^5.3.1",
-    "@storybook/react": "^5.3.1",
     "@testing-library/jest-dom": "^5.0.2",
     "@testing-library/react": "^9.4.0",
-    "@testing-library/user-event": "^8.0.3",
-    "autoprefixer": "^9.7.3",
-    "awesome-typescript-loader": "^5.2.1",
+    "@types/enzyme": "^3.10.4",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@typescript-eslint/eslint-plugin": "^2.19.0",
+    "@typescript-eslint/parser": "^2.19.0",
     "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.0.6",
     "coveralls": "^3.0.9",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
-    "enzyme-to-json": "^3.4.3",
     "eslint": "^6.8.0",
     "eslint-config-react-app": "5.1.0",
-    "eslint-loader": "^3.0.3",
     "eslint-plugin-flowtype": "^4.6.0",
     "eslint-plugin-import": "^2.20.0",
     "eslint-plugin-jsx-a11y": "6.2.3",
@@ -69,17 +55,8 @@
     "husky": "^4.0.7",
     "jest": "^25.1.0",
     "lint-staged": "^10.0.4",
-    "postcss-cli": "^7.1.0",
-    "postcss-cssnext": "^3.1.0",
-    "postcss-import": "^12.0.1",
-    "postcss-nested": "^4.2.1",
-    "postcss-reporter": "^6.0.1",
-    "postcss-url": "^8.0.0",
     "prettier": "^1.19.1",
-    "react-docgen-typescript-loader": "^3.6.0",
-    "react-test-renderer": "^16.12.0",
-    "tailwindcss": "^1.1.4",
-    "tailwindcss-alpha": "^0.1.4",
+    "react-dom": "^16.12.0",
     "ts-jest": "^25.0.0"
   },
   "husky": {

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import CookiesBtn from "./CookiesBtn";
+import CookieButton from "./CookieButton";
 import Cookies from "js-cookie";
 
-type PopupProps = {
+type CookiePopupProps = {
   classAcceptButton: string;
   classDeclineButton: string;
   textAcceptButton: string;
@@ -17,7 +17,7 @@ type PopupProps = {
   expires: number;
 };
 
-function CookiesImprintBtn(props: React.PropsWithChildren<PopupProps>) {
+function CookieImprintButton(props: React.PropsWithChildren<CookiePopupProps>) {
   const [acceptVisible, setAcceptVisible] = useState(false);
 
   useEffect(() => {
@@ -36,7 +36,19 @@ function CookiesImprintBtn(props: React.PropsWithChildren<PopupProps>) {
     }
   }
 
+  function deleteAllCookies() {
+    const domain = "." + window.location.hostname;
+    Object.keys(Cookies.get()).forEach(function(cookieName) {
+      if (cookieName.indexOf("_") !== -1) {
+        Cookies.remove(cookieName, { domain: domain });
+      } else {
+        Cookies.remove(cookieName);
+      }
+    });
+  }
+
   function handleAccept() {
+    deleteAllCookies();
     setPopUpCookie();
     Cookies.set(props.cookieNameAccept, props.cookieValueAccept, {
       expires: props.expires
@@ -45,6 +57,7 @@ function CookiesImprintBtn(props: React.PropsWithChildren<PopupProps>) {
   }
 
   function handleDecline() {
+    deleteAllCookies();
     setPopUpCookie();
     Cookies.set(props.cookieNameDecline, props.cookieValueDecline, {
       expires: props.expires
@@ -55,22 +68,26 @@ function CookiesImprintBtn(props: React.PropsWithChildren<PopupProps>) {
 
   if (acceptVisible) {
     return (
-      <CookiesBtn class={props.classAcceptButton} clickCallback={handleAccept}>
+      <CookieButton
+        class={props.classAcceptButton}
+        clickCallback={handleAccept}
+      >
         {props.textAcceptButton}
-      </CookiesBtn>
+      </CookieButton>
     );
   }
 
   return (
-    <CookiesBtn class={props.classDeclineButton} clickCallback={handleDecline}>
+    <CookieButton
+      class={props.classDeclineButton}
+      clickCallback={handleDecline}
+    >
       {props.textDeclineButton}
-    </CookiesBtn>
+    </CookieButton>
   );
 }
 
-//
-
-CookiesImprintBtn.defaultProps = {
+CookieImprintButton.defaultProps = {
   classAcceptButton:
     "focus:outline-none py-1 px-2 md:py-2 md:px-3 w-24 mr-2 bg-green-700 hover:bg-green-600 text-white rounded w-full text-xl  mt-8",
   classDeclineButton:
@@ -87,4 +104,4 @@ CookiesImprintBtn.defaultProps = {
   expires: 30
 };
 
-export default CookiesImprintBtn;
+export default CookieImprintButton;

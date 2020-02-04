@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
-import CookiesImprintBtn from "./CookiesImprintBtn";
-import CookiesBtn from "./CookiesBtn";
+import CookiesButton from "./CookieButton";
 
 type PopupProps = {
   class: string;
@@ -19,7 +18,7 @@ type PopupProps = {
   debug: boolean;
 };
 
-function CookiesPopup(props: React.PropsWithChildren<PopupProps>) {
+function CookiePopup(props: React.PropsWithChildren<PopupProps>) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -62,20 +61,18 @@ function CookiesPopup(props: React.PropsWithChildren<PopupProps>) {
         <div className="w-full md:w-1/2 p-5">
           <div className="flex flex-row-reverse">
             <div className="w-full md:w-1/2">
-              <CookiesBtn
+              <CookiesButton
                 class={props.classAcceptButton}
-                deleteCookies={false}
                 clickCallback={handleAccept}
               >
                 {props.textAcceptButton}
-              </CookiesBtn>
-              <CookiesBtn
+              </CookiesButton>
+              <CookiesButton
                 class={props.classDeclineButton}
-                deleteCookies={false}
                 clickCallback={handleDecline}
               >
                 {props.textDeclineButton}
-              </CookiesBtn>
+              </CookiesButton>
             </div>
           </div>
         </div>
@@ -84,7 +81,7 @@ function CookiesPopup(props: React.PropsWithChildren<PopupProps>) {
   );
 }
 
-CookiesPopup.defaultProps = {
+CookiePopup.defaultProps = {
   class: "container mx-auto px-10",
   classAcceptButton:
     "focus:outline-none py-1 px-2 md:py-2 md:px-3 w-24 mr-2 bg-green-700 hover:bg-green-600 text-white rounded w-full text-xl",
@@ -102,4 +99,4 @@ CookiesPopup.defaultProps = {
   debug: false
 };
 
-export default CookiesPopup;
+export default CookiePopup;
