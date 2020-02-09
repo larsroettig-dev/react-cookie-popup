@@ -1,20 +1,58 @@
 {
   "name": "@larsroettig/react-cookie-popup",
   "description": "React TypeScript Cookie popup",
-  "version": "0.2.0-beta",
+  "version": "0.2.0",
   "license": "MIT",
   "author": "Lars Roettig <l.roettig@techdivision.com>",
-  "main": "dist/main.js",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
-    "@types/js-cookie": "^2.2.2",
     "js-cookie": "^2.2.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.0.2",
+    "@testing-library/react": "^9.4.0",
+    "@types/enzyme": "^3.10.4",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/js-cookie": "^2.2.2",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "@typescript-eslint/eslint-plugin": "^2.19.0",
+    "@typescript-eslint/parser": "^2.19.0",
+    "babel-eslint": "^10.0.3",
+    "coveralls": "^3.0.9",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^6.8.0",
+    "eslint-config-react-app": "5.1.0",
+    "eslint-plugin-flowtype": "^4.6.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "husky": "^4.0.7",
+    "jest": "^25.1.0",
+    "lint-staged": "^10.0.4",
+    "prettier": "^1.19.1",
+    "ts-jest": "^25.0.0",
+    "typescript": "^3.7.5",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "tailwindcss": "*"
   },
   "peerDependencies": {
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "tailwindcss": "*"
   },
   "scripts": {
-    "build": "yarn run webpack",
+    "build": "yarn run build:clean && yarn build:esm && yarn build:cjs",
+    "build:clean": "node --experimental-modules scripts/clean-dist.mjs",
+    "build:esm": "tsc --module es6 --target es2018 --outDir dist/esm",
+    "build:cjs": "tsc --module commonjs --target es5 --outDir dist/cjs",
     "type-check": "tsc --noEmit",
     "format": "prettier --write \"**/*.{js,jsx,json,md,ts,tsx}\"",
     "test": "jest",
@@ -36,34 +74,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@testing-library/jest-dom": "^5.0.2",
-    "@testing-library/react": "^9.4.0",
-    "@types/enzyme": "^3.10.4",
-    "@types/enzyme-adapter-react-16": "^1.0.5",
-    "@typescript-eslint/eslint-plugin": "^2.19.0",
-    "@typescript-eslint/parser": "^2.19.0",
-    "babel-eslint": "^10.0.3",
-    "coveralls": "^3.0.9",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
-    "eslint": "^6.8.0",
-    "eslint-config-react-app": "5.1.0",
-    "eslint-plugin-flowtype": "^4.6.0",
-    "eslint-plugin-import": "^2.20.0",
-    "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-react-hooks": "^2.3.0",
-    "husky": "^4.0.7",
-    "jest": "^25.1.0",
-    "lint-staged": "^10.0.4",
-    "prettier": "^1.19.1",
-    "ts-jest": "^25.0.0",
-    "ts-loader": "^6.2.1",
-    "typescript": "~3.7.2",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
   },
   "husky": {
     "hooks": {
