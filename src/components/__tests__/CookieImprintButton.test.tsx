@@ -1,9 +1,9 @@
 import React from "react";
-
-import CookieImprintButton from "../CookieImprintButton";
 import Enzyme, { mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import Cookies from "js-cookie";
+
+import CookieImprintButton from "../CookieImprintButton";
 
 Enzyme.configure({ adapter: new Adapter() });
 

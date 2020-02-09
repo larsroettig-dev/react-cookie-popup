@@ -1,8 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import CookieButton from "../CookieButton";
 import Enzyme, { mount, shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
+
+import CookieButton from "../CookieButton";
 
 Enzyme.configure({ adapter: new Adapter() });
 
