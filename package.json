@@ -1,13 +1,37 @@
 {
   "name": "@larsroettig/react-cookie-popup",
   "description": "React TypeScript Cookie popup",
-  "version": "0.2.0",
+  "version": "1.0.0-0",
   "license": "MIT",
   "author": "Lars Roettig <l.roettig@techdivision.com>",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larsroettig/react-cookie-popup.git"
+  },
   "publishConfig": {
     "access": "public"
+  },
+  "keywords": [
+    "react",
+    "cookie",
+    "popup",
+    "consent",
+    "node",
+    "nodejs",
+    "javascript",
+    "typescript",
+    "tailwindcss",
+    "ts",
+    "js"
+  ],
+  "bugs": {
+    "url": "https://github.com/larsroettig/react-cookie-popup/issues"
+  },
+  "engines": {
+    "node": ">=10"
   },
   "dependencies": {
     "js-cookie": "^2.2.1"
@@ -37,11 +61,11 @@
     "jest": "^25.1.0",
     "lint-staged": "^10.0.4",
     "prettier": "^1.19.1",
-    "ts-jest": "^25.0.0",
-    "typescript": "^3.7.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "tailwindcss": "*"
+    "tailwindcss": "*",
+    "ts-jest": "^25.0.0",
+    "typescript": "^3.7.5"
   },
   "peerDependencies": {
     "react": "^16.12.0",

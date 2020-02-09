@@ -1,0 +1,77 @@
+= React Cookie Popup
+
+image:https://badge.fury.io/js/%40larsroettig%2Freact-cookie-popup.svg[npm version,link=https://badge.fury.io/js/%40larsroettig%2Freact-cookie-popup]
+image:https://travis-ci.org/larsroettig/react-cookie-popup.svg?branch=master[Travis Status,link=https://travis-ci.org/larsroettig/react-cookie-popup.svg?branch=master]
+image:https://coveralls.io/repos/github/larsroettig/react-cookie-popup/badge.svg?branch=master[Coverage Status,link=https://coveralls.io/github/larsroettig/react-cookie-popup?branch=master] image:https://badges.greenkeeper.io/larsroettig/react-cookie-popup.svg[Greenkeeper badge,link=https://greenkeeper.io/]
+
+Is a small React TypeScript Module allows to render a cookie popup based on Tailwind CSS.
+
+== Example Styling
+
+image:https://raw.githubusercontent.com/larsroettig/react-cookie-popup/master/doc/react_modal.png[react_modal]
+
+*A full Demo can you find here:*
+https://github.com/larsroettig/react-cookie-popup-demo
+
+== Installation
+
+[source,shell]
+----
+yarn add @larsroettig/react-cookie-popup
+
+----
+
+or npm
+
+[source,shell]
+----
+npm i @larsroettig/react-cookie-popup
+
+----
+
+=== Components
+
+[cols="<,^"]
+|===
+|Component Names |Function 
+
+|CookiePopup | The  PopUp Element
+|CookieImprintButton | Shows a button to revoke the user decision for the imprint deletes all cookie
+|CookieButton |Simple Tailwind Button Element with a clickCallback
+|===
+
+*You can import the CookiePopup like this:*
+
+[source,js]
+----
+import {CookiePopup} from "@larsroettig/react-cookie-popup";
+----
+
+*How to use the CookiePopup:*
+[source,js]
+----
+<CookiePopup>
+    <section>
+        <h4 className="py-5 text-xl">
+               A very nice Cookie Message
+        </h4>
+    </section>
+</CookiePopup>
+----
+
+=== Contribute
+
+_Installation:_
+
+----
+git clone git@github.com:larsroettig/react-cookie-popup.git
+yarn install
+----
+
+_Execute Tests:_
+
+----
+git clone git@github.com:larsroettig/react-cookie-popup.git
+yarn install
+yarn test:watch
+----
