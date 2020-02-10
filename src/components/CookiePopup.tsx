@@ -42,7 +42,7 @@ function CookiePopup(props: React.PropsWithChildren<PopupProps>) {
   }
 
   function handleDecline() {
-    Cookies.set(props.cookieNameShowed, props.cookieValueShowed, {
+    Cookies.set(props.cookieNameDecline, props.cookieValueDecline, {
       expires: props.expires
     });
     setPopUpCookie();
