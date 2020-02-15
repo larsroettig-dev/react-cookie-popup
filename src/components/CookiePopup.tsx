@@ -3,7 +3,7 @@ import Cookies from "js-cookie";
 import CookiesButton from "./CookieButton";
 
 type PopupProps = {
-  class: string;
+  rootClass: string;
   classAcceptButton: string;
   classDeclineButton: string;
   textAcceptButton: string;
@@ -55,20 +55,20 @@ function CookiePopup(props: React.PropsWithChildren<PopupProps>) {
   }
 
   return (
-    <div className={props.class} id={"cookie-popup"}>
+    <div className={props.rootClass} id={"cookie-popup"}>
       <div className="flex flex-wrap">
         <div className="w-full md:w-1/2 p-5">{props.children}</div>
         <div className="w-full md:w-1/2 p-5">
           <div className="flex flex-row-reverse">
             <div className="w-full md:w-1/2">
               <CookiesButton
-                class={props.classAcceptButton}
+                rootClass={props.classAcceptButton}
                 clickCallback={handleAccept}
               >
                 {props.textAcceptButton}
               </CookiesButton>
               <CookiesButton
-                class={props.classDeclineButton}
+                rootClass={props.classDeclineButton}
                 clickCallback={handleDecline}
               >
                 {props.textDeclineButton}
@@ -82,11 +82,11 @@ function CookiePopup(props: React.PropsWithChildren<PopupProps>) {
 }
 
 CookiePopup.defaultProps = {
-  class: "container mx-auto px-10",
+  rootClass: "container mx-auto px-10",
   classAcceptButton:
     "focus:outline-none py-1 px-2 md:py-2 md:px-3 w-24 mr-2 bg-green-700 hover:bg-green-600 text-white rounded w-full text-xl",
   classDeclineButton:
-    "focus:outline-none py-1 px-2 md:py-2 md:px-3 w-24 bg-red-700 hover:bg-red-600 text-white rounded w-full text-xl mt-8 ",
+    "focus:outline-none py-1 px-2 md:py-2 md:px-3 w-24 mt-8 bg-red-700 hover:bg-red-600 text-white rounded w-full text-xl",
   textAcceptButton: "Accept",
   textDeclineButton: "Deny",
   cookieNameShowed: "cookie-msg-showed",

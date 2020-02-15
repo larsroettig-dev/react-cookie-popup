@@ -29,7 +29,7 @@ describe("<CookiePopup/>", () => {
 
   test("handleAccept", async () => {
     let cookiePopup = mount(
-      <CookiePopup cookieNameShowed={"handleAccept"}>
+      <CookiePopup>
         <h1>Simple Pop Up</h1>
       </CookiePopup>
     );
@@ -40,7 +40,7 @@ describe("<CookiePopup/>", () => {
   test("handleDecline", async () => {
     let cookiePopup = mount(
       <CookiePopup cookieNameShowed={"handleDecline"}>
-        <h1>Simple Pop Up</h1>
+        <h1>Simple Pop Up 2</h1>
       </CookiePopup>
     );
     cookiePopup.find(".bg-red-700").simulate("click");

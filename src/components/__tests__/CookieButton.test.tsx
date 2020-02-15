@@ -13,7 +13,7 @@ describe("<CookieButton />", () => {
   });
 
   test("should change class", async () => {
-    shallow(<CookieButton class={"baz"}> I am a button </CookieButton>);
+    shallow(<CookieButton rootClass={"baz"}> I am a button </CookieButton>);
   });
 
   test("should be clickable", async () => {

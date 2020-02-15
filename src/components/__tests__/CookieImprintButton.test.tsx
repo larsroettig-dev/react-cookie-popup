@@ -33,9 +33,11 @@ describe("<CookieImprintButton />", () => {
 
   test("remove underscore should work", async () => {
     const wrapper = mount(<CookieImprintButton />);
-    Cookies.set("_gat_UA-132860465-3", "1", {
-      domain: "." + window.location.hostname
-    });
+    const domain = "." + window.location.hostname;
+    Cookies.set("_test", "kfkkfkf", { domain: domain });
+
+    console.log(document.cookie);
+
     wrapper.find("CookieButton").simulate("click");
     expect(Cookies.getJSON()).toEqual({
       "cookie-msg-showed": true,

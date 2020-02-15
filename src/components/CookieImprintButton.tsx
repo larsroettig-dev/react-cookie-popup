@@ -29,16 +29,15 @@ function CookieImprintButton(props: React.PropsWithChildren<CookiePopupProps>) {
   }, [props.cookieNameAccept, props.cookieValueAccept]);
 
   function setPopUpCookie() {
-    if (!props.shouldShowPopUp) {
-      Cookies.set(props.cookieNameShowed, props.cookieValueShowed, {
-        expires: props.expires
-      });
-    }
+    Cookies.set(props.cookieNameShowed, props.cookieValueShowed, {
+      expires: props.expires
+    });
   }
 
   function deleteAllCookies() {
     const domain = "." + window.location.hostname;
     Object.keys(Cookies.get()).forEach(function(cookieName) {
+      /* istanbul ignore if */
       if (cookieName.indexOf("_") !== -1) {
         Cookies.remove(cookieName, { domain: domain });
       } else {
@@ -69,7 +68,7 @@ function CookieImprintButton(props: React.PropsWithChildren<CookiePopupProps>) {
   if (acceptVisible) {
     return (
       <CookieButton
-        class={props.classAcceptButton}
+        rootClass={props.classAcceptButton}
         clickCallback={handleAccept}
       >
         {props.textAcceptButton}
@@ -79,7 +78,7 @@ function CookieImprintButton(props: React.PropsWithChildren<CookiePopupProps>) {
 
   return (
     <CookieButton
-      class={props.classDeclineButton}
+      rootClass={props.classDeclineButton}
       clickCallback={handleDecline}
     >
       {props.textDeclineButton}
@@ -89,9 +88,9 @@ function CookieImprintButton(props: React.PropsWithChildren<CookiePopupProps>) {
 
 CookieImprintButton.defaultProps = {
   classAcceptButton:
-    "focus:outline-none py-1 px-2 md:py-2 md:px-3 w-24 mr-2 bg-green-700 hover:bg-green-600 text-white rounded w-full text-xl  mt-8",
+    "focus:outline-none py-1 px-2 md:py-2 md:px-3 w-24 mr-2 bg-green-700 hover:bg-gray-600 text-white rounded w-full text-xl  mt-8",
   classDeclineButton:
-    "focus:outline-none py-1 px-2 md:py-2 md:px-3 w-24 bg-red-700 hover:bg-red-600 text-white rounded w-full text-xl mt-8 ",
+    "focus:outline-none py-1 px-2 md:py-2 md:px-3 w-24 bg-red-700 hover:bg-gray-600 text-white rounded w-full text-xl mt-8 ",
   textAcceptButton: "Accept",
   textDeclineButton: "Deny",
   cookieNameShowed: "cookie-msg-showed",
