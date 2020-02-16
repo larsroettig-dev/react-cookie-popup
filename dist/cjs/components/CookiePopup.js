@@ -44,7 +44,7 @@ function CookiePopup(props) {
     setVisible(false);
   }
   function handleDecline() {
-    js_cookie_1.default.set(props.cookieNameShowed, props.cookieValueShowed, {
+    js_cookie_1.default.set(props.cookieNameDecline, props.cookieValueDecline, {
       expires: props.expires
     });
     setPopUpCookie();
@@ -55,7 +55,7 @@ function CookiePopup(props) {
   }
   return react_1.default.createElement(
     "div",
-    { className: props.class, id: "cookie-popup" },
+    { className: props.rootClass, id: "cookie-popup" },
     react_1.default.createElement(
       "div",
       { className: "flex flex-wrap" },
@@ -75,12 +75,18 @@ function CookiePopup(props) {
             { className: "w-full md:w-1/2" },
             react_1.default.createElement(
               CookieButton_1.default,
-              { class: props.classAcceptButton, clickCallback: handleAccept },
+              {
+                rootClass: props.classAcceptButton,
+                clickCallback: handleAccept
+              },
               props.textAcceptButton
             ),
             react_1.default.createElement(
               CookieButton_1.default,
-              { class: props.classDeclineButton, clickCallback: handleDecline },
+              {
+                rootClass: props.classDeclineButton,
+                clickCallback: handleDecline
+              },
               props.textDeclineButton
             )
           )
@@ -90,11 +96,11 @@ function CookiePopup(props) {
   );
 }
 CookiePopup.defaultProps = {
-  class: "container mx-auto px-10",
+  rootClass: "container mx-auto px-10",
   classAcceptButton:
     "focus:outline-none py-1 px-2 md:py-2 md:px-3 w-24 mr-2 bg-green-700 hover:bg-green-600 text-white rounded w-full text-xl",
   classDeclineButton:
-    "focus:outline-none py-1 px-2 md:py-2 md:px-3 w-24 bg-red-700 hover:bg-red-600 text-white rounded w-full text-xl mt-8 ",
+    "focus:outline-none py-1 px-2 md:py-2 md:px-3 w-24 mt-8 bg-red-700 hover:bg-red-600 text-white rounded w-full text-xl",
   textAcceptButton: "Accept",
   textDeclineButton: "Deny",
   cookieNameShowed: "cookie-msg-showed",

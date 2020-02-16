@@ -11,11 +11,9 @@ function CookieImprintButton(props) {
     }
   }, [props.cookieNameAccept, props.cookieValueAccept]);
   function setPopUpCookie() {
-    if (!props.shouldShowPopUp) {
-      Cookies.set(props.cookieNameShowed, props.cookieValueShowed, {
-        expires: props.expires
-      });
-    }
+    Cookies.set(props.cookieNameShowed, props.cookieValueShowed, {
+      expires: props.expires
+    });
   }
   function deleteAllCookies() {
     const domain = "." + window.location.hostname;
@@ -46,21 +44,21 @@ function CookieImprintButton(props) {
   if (acceptVisible) {
     return React.createElement(
       CookieButton,
-      { class: props.classAcceptButton, clickCallback: handleAccept },
+      { rootClass: props.classAcceptButton, clickCallback: handleAccept },
       props.textAcceptButton
     );
   }
   return React.createElement(
     CookieButton,
-    { class: props.classDeclineButton, clickCallback: handleDecline },
+    { rootClass: props.classDeclineButton, clickCallback: handleDecline },
     props.textDeclineButton
   );
 }
 CookieImprintButton.defaultProps = {
   classAcceptButton:
-    "focus:outline-none py-1 px-2 md:py-2 md:px-3 w-24 mr-2 bg-green-700 hover:bg-green-600 text-white rounded w-full text-xl  mt-8",
+    "focus:outline-none py-1 px-2 md:py-2 md:px-3 w-24 mr-2 bg-green-700 hover:bg-gray-600 text-white rounded w-full text-xl  mt-8",
   classDeclineButton:
-    "focus:outline-none py-1 px-2 md:py-2 md:px-3 w-24 bg-red-700 hover:bg-red-600 text-white rounded w-full text-xl mt-8 ",
+    "focus:outline-none py-1 px-2 md:py-2 md:px-3 w-24 bg-red-700 hover:bg-gray-600 text-white rounded w-full text-xl mt-8 ",
   textAcceptButton: "Accept",
   textDeclineButton: "Deny",
   cookieNameShowed: "cookie-msg-showed",
